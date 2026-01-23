@@ -186,34 +186,38 @@ from firebase_admin import credentials, firestore
 import streamlit.components.v1 as components
 
 # --- CONFIGURAÇÃO DE CAMINHO ---
+# Nota: Se rodar no Streamlit Cloud, esse caminho de rede não funcionará.
 OUTPUT_PATH = r"\\192.168.1.168\Anexos\Documentos Digitalizados\Nova pasta (39)"
 
 # --- CONFIGURAÇÃO FIREBASE ---
 def init_firebase():
     if not firebase_admin._apps:
-        cred_dict = {
-            "type": st.secrets["firebase"]["type"],
-            "project_id": st.secrets["firebase"]["project_id"],
-            "private_key_id": st.secrets["firebase"]["private_key_id"],
-            "private_key": st.secrets["firebase"]["private_key"],
-            "client_email": st.secrets["firebase"]["client_email"],
-            "client_id": st.secrets["firebase"]["client_id"],
-            "auth_uri": st.secrets["firebase"]["auth_uri"],
-            "token_uri": st.secrets["firebase"]["token_uri"],
-            "auth_provider_x509_cert_url": st.secrets["firebase"]["auth_provider_x509_cert_url"],
-            "client_x509_cert_url": st.secrets["firebase"]["client_x509_cert_url"],
-            "universe_domain": st.secrets["firebase"]["universe_domain"]
-        }
-        cred = credentials.Certificate(cred_dict)
-        firebase_admin.initialize_app(cred)
+        try:
+            cred_dict = {
+                "type": st.secrets["firebase"]["type"],
+                "project_id": st.secrets["firebase"]["project_id"],
+                "private_key_id": st.secrets["firebase"]["private_key_id"],
+                "private_key": st.secrets["firebase"]["private_key"].replace("\\n", "\n"),
+                "client_email": st.secrets["firebase"]["client_email"],
+                "client_id": st.secrets["firebase"]["client_id"],
+                "auth_uri": st.secrets["firebase"]["auth_uri"],
+                "token_uri": st.secrets["firebase"]["token_uri"],
+                "auth_provider_x509_cert_url": st.secrets["firebase"]["auth_provider_x509_cert_url"],
+                "client_x509_cert_url": st.secrets["firebase"]["client_x509_cert_url"],
+                "universe_domain": st.secrets["firebase"]["universe_domain"]
+            }
+            cred = credentials.Certificate(cred_dict)
+            firebase_admin.initialize_app(cred)
+        except Exception as e:
+            st.error(f"Erro ao conectar Firebase: {e}")
     return firestore.client()
 
 db = init_firebase()
 
 # --- FUNÇÕES DE AUXÍLIO ---
 
-def trigger_auto_download(content, filename):
-    """Gera um pequeno script JS para baixar o arquivo automaticamente no navegador."""
+def trigger_auto_download(content, filename, key):
+    """Injeta JavaScript para download forçado."""
     b64 = base64.b64encode(content).decode()
     dl_link = f"""
         <script>
@@ -222,9 +226,10 @@ def trigger_auto_download(content, filename):
             a.download = '{filename}';
             document.body.appendChild(a);
             a.click();
-            document.body.removeChild(a);
+            a.remove();
         </script>
     """
+    # O uso de 'key' garante que o Streamlit renderize um componente novo para cada arquivo
     components.html(dl_link, height=0, width=0)
 
 def extract_section_near_total(page_text):
@@ -237,10 +242,13 @@ def extract_section_near_total(page_text):
 
 def get_firebase_mapping():
     mapping_dict = {}
-    docs = db.collection('mapeamento_secoes').stream()
-    for doc in docs:
-        data = doc.to_dict()
-        mapping_dict[str(data['COD_SECAO'])] = str(data['ONDE LANÇAR'])
+    try:
+        docs = db.collection('mapeamento_secoes').stream()
+        for doc in docs:
+            data = doc.to_dict()
+            mapping_dict[str(data['COD_SECAO'])] = str(data['ONDE LANÇAR'])
+    except:
+        st.error("Erro ao buscar mapeamento no Firebase.")
     return mapping_dict
 
 def get_unique_filename(base_type, obra, sufixo, existing_names):
@@ -252,6 +260,7 @@ def get_unique_filename(base_type, obra, sufixo, existing_names):
         if novo_nome not in existing_names: return novo_nome
         counter += 1
 
+# --- DIALOGO CADASTRO ---
 @st.dialog("Nova Seção Encontrada")
 def cadastrar_secao(secao):
     st.warning(f"A seção {secao} não existe no Firebase.")
@@ -265,11 +274,11 @@ def cadastrar_secao(secao):
             st.success("Dados salvos!")
             st.rerun()
 
-# --- INTERFACE ---
+# --- INTERFACE PRINCIPAL ---
 
 def main():
     st.set_page_config(page_title="Processador Automático", layout="wide")
-    st.title("📑 Divisor Automático de PDF")
+    st.title("📑 Divisor PDF: Rede ou Download")
 
     mapping_dict = get_firebase_mapping()
 
@@ -278,11 +287,11 @@ def main():
     ano_pl = st.sidebar.text_input("Ano", value="26", max_chars=2)
     sufixo = f"{mes_pl}{ano_pl}"
 
-    uploaded_pdfs = st.file_uploader("Arquivos PDF", type="pdf", accept_multiple_files=True)
+    uploaded_pdfs = st.file_uploader("Arraste os PDFs aqui", type="pdf", accept_multiple_files=True)
 
     if uploaded_pdfs:
-        if st.button("🚀 Iniciar Processamento Automático"):
-            # 1. SCAN PRÉVIO PARA VALIDAÇÃO (FIREBASE)
+        if st.button("🚀 Iniciar Processo"):
+            # 1. Validação de Seções
             missing = []
             for pdf_file in uploaded_pdfs:
                 with pdfplumber.open(pdf_file) as pdf_plumb:
@@ -291,21 +300,18 @@ def main():
                         secao = extract_section_near_total(text)
                         if secao and secao not in mapping_dict and secao not in missing:
                             missing.append(secao)
-
+            
             if missing:
                 cadastrar_secao(missing[0])
                 return
 
-            # 2. LOOP DE PROCESSAMENTO
+            # 2. Processamento Real
             used_filenames = set()
-            progress_bar = st.progress(0)
-            status_text = st.empty()
+            container_status = st.container()
             
-            total_files = len(uploaded_pdfs)
-            
-            for idx, uploaded_pdf in enumerate(uploaded_pdfs):
-                reader = PdfReader(uploaded_pdf)
-                with pdfplumber.open(uploaded_pdf) as pdf_plumb:
+            for pdf_file in uploaded_pdfs:
+                reader = PdfReader(pdf_file)
+                with pdfplumber.open(pdf_file) as pdf_plumb:
                     paginas_acumuladas = []
                     
                     for i, page in enumerate(pdf_plumb.pages):
@@ -316,47 +322,43 @@ def main():
                         if secao_encontrada and secao_encontrada in mapping_dict:
                             obra = mapping_dict[secao_encontrada]
                             
-                            # Define nomes para Folha Soma e Caixa
-                            tipos = ["FOLHASOMA", "FOLHACAIXA"]
-                            
-                            # Gera o conteúdo PDF
+                            # Gerar PDF em memória
                             writer = PdfWriter()
                             for p_idx in paginas_acumuladas:
                                 writer.add_page(reader.pages[p_idx])
                             
-                            pdf_io = io.BytesIO()
-                            writer.write(pdf_io)
-                            content = pdf_io.getvalue()
+                            pdf_out = io.BytesIO()
+                            writer.write(pdf_out)
+                            content = pdf_out.getvalue()
                             
-                            for tipo in tipos:
+                            # Gerar os dois arquivos (Soma e Caixa)
+                            for tipo in ["FOLHASOMA", "FOLHACAIXA"]:
                                 nome = get_unique_filename(tipo, obra, sufixo, used_filenames)
                                 used_filenames.add(nome)
                                 
-                                # Tenta salvar na Rede
-                                rede_ok = False
+                                # Tenta salvar na rede
+                                salvou_rede = False
                                 try:
-                                    # Garante que o diretório existe
-                                    if not os.path.exists(OUTPUT_PATH):
-                                        os.makedirs(OUTPUT_PATH, exist_ok=True)
-                                    
-                                    full_path = os.path.join(OUTPUT_PATH, nome)
-                                    with open(full_path, "wb") as f:
-                                        f.write(content)
-                                    rede_ok = True
-                                    st.write(f"✅ **{nome}** salvo na rede.")
-                                except Exception as e:
-                                    rede_ok = False
-                                    st.warning(f"⚠️ Falha ao salvar **{nome}** na rede. Iniciando download...")
-                                    # Fallback: Download automático via JS
-                                    trigger_auto_download(content, nome)
-                            
-                            # Limpa para a próxima seção do mesmo PDF
+                                    # Verifica se o caminho base existe antes de tentar salvar
+                                    if os.path.exists(os.path.dirname(OUTPUT_PATH)):
+                                        full_path = os.path.join(OUTPUT_PATH, nome)
+                                        with open(full_path, "wb") as f:
+                                            f.write(content)
+                                        salvou_rede = True
+                                except:
+                                    salvou_rede = False
+
+                                if salvou_rede:
+                                    container_status.success(f"📁 {nome} -> Salvo na Rede")
+                                else:
+                                    container_status.info(f"📥 {nome} -> Enviando para Download")
+                                    # Força o download no navegador com chave única
+                                    trigger_auto_download(content, nome, key=f"dl_{nome}_{i}")
+
+                            # Limpa para a próxima seção
                             paginas_acumuladas = []
-                
-                progress_bar.progress((idx + 1) / total_files)
             
-            st.success("✅ Processamento concluído!")
-            st.info("Se alguns arquivos não foram para a rede, verifique sua pasta de Downloads.")
+            st.success("✅ Fim do processamento!")
 
 if __name__ == "__main__":
     main()

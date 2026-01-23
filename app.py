@@ -174,14 +174,12 @@
 
 # if __name__ == "__main__":
 #     main()
-#
 import streamlit as st
 import pdfplumber
 from PyPDF2 import PdfReader, PdfWriter
 import re
 import io
 import os
-import zipfile
 import firebase_admin
 from firebase_admin import credentials, firestore
 
@@ -237,7 +235,7 @@ def get_unique_filename(base_type, obra, sufixo, existing_names):
         if novo_nome not in existing_names: return novo_nome
         counter += 1
 
-# --- DIÁLOGO (POP-UP) ---
+# --- DIÁLOGO ---
 
 @st.dialog("Nova Seção Encontrada")
 def cadastrar_secao(secao):
@@ -256,7 +254,7 @@ def cadastrar_secao(secao):
 
 def main():
     st.set_page_config(page_title="Processador por Seção", layout="wide")
-    st.title("📑 Processador de PDFs")
+    st.title("📑 Divisor de PDF - Um por Vez")
 
     mapping_dict = get_firebase_mapping()
 
@@ -269,10 +267,8 @@ def main():
 
     if uploaded_pdfs:
         if st.button("🚀 Iniciar Processamento"):
-            all_generated_files = [] # Lista de tuplas (nome, bytes)
+            # 1. SCAN PRÉVIO APENAS PARA VALIDAÇÃO
             missing = []
-            
-            # 1. SCAN DE SEÇÕES FALTANTES
             for pdf_file in uploaded_pdfs:
                 with pdfplumber.open(pdf_file) as pdf_plumb:
                     for page in pdf_plumb.pages:
@@ -285,12 +281,18 @@ def main():
                 cadastrar_secao(missing[0])
                 return
 
-            # 2. PROCESSAMENTO EM MEMÓRIA
+            # 2. LOOP DE PROCESSAMENTO E DOWNLOADS
             used_filenames = set()
+            st.subheader("📦 Arquivos Gerados")
+            
+            # Container para organizar os botões em grid
+            grid = st.container()
+            
             for uploaded_pdf in uploaded_pdfs:
                 reader = PdfReader(uploaded_pdf)
                 with pdfplumber.open(uploaded_pdf) as pdf_plumb:
                     paginas_acumuladas = []
+                    
                     for i, page in enumerate(pdf_plumb.pages):
                         paginas_acumuladas.append(i)
                         text = page.extract_text() or ""
@@ -298,57 +300,55 @@ def main():
                         
                         if secao_encontrada and secao_encontrada in mapping_dict:
                             obra = mapping_dict[secao_encontrada]
-                            n_soma = get_unique_filename("FOLHASOMA", obra, sufixo, used_filenames)
-                            used_filenames.add(n_soma)
-                            n_caixa = get_unique_filename("FOLHACAIXA", obra, sufixo, used_filenames)
-                            used_filenames.add(n_caixa)
                             
+                            # Define nomes
+                            nomes = [
+                                get_unique_filename("FOLHASOMA", obra, sufixo, used_filenames),
+                                get_unique_filename("FOLHACAIXA", obra, sufixo, used_filenames)
+                            ]
+                            
+                            # Gera o conteúdo PDF (em memória)
                             writer = PdfWriter()
                             for p_idx in paginas_acumuladas:
                                 writer.add_page(reader.pages[p_idx])
                             
-                            pdf_bytes = io.BytesIO()
-                            writer.write(pdf_bytes)
-                            content = pdf_bytes.getvalue()
+                            pdf_io = io.BytesIO()
+                            writer.write(pdf_io)
+                            content = pdf_io.getvalue()
                             
-                            all_generated_files.append((n_soma, content))
-                            all_generated_files.append((n_caixa, content))
+                            # Loop interno para salvar e mostrar botão de cada um (Soma e Caixa)
+                            for nome in nomes:
+                                used_filenames.add(nome)
+                                
+                                # Tenta salvar na Rede
+                                rede_ok = False
+                                try:
+                                    full_path = os.path.join(OUTPUT_PATH, nome)
+                                    with open(full_path, "wb") as f:
+                                        f.write(content)
+                                    rede_ok = True
+                                except:
+                                    rede_ok = False
+
+                                # Cria o visual para o usuário
+                                with grid:
+                                    c1, c2 = st.columns([3, 1])
+                                    with c1:
+                                        status = "✅ Salvo na Rede" if rede_ok else "❌ Falha na Rede"
+                                        st.write(f"**{nome}** - {status}")
+                                    with c2:
+                                        st.download_button(
+                                            label="📥 Baixar",
+                                            data=content,
+                                            file_name=nome,
+                                            mime="application/pdf",
+                                            key=f"dl_{nome}"
+                                        )
+                            
+                            # Limpa para a próxima seção
                             paginas_acumuladas = []
 
-            # 3. TENTATIVA DE SALVAMENTO NA REDE
-            save_error = False
-            files_saved_count = 0
-            
-            try:
-                if not os.path.exists(OUTPUT_PATH):
-                    raise Exception("Caminho de rede inacessível")
-                
-                for nome, conteudo in all_generated_files:
-                    full_path = os.path.join(OUTPUT_PATH, nome)
-                    with open(full_path, "wb") as f:
-                        f.write(conteudo)
-                    files_saved_count += 1
-                
-                st.success(f"✅ {files_saved_count} arquivos salvos com sucesso em: {OUTPUT_PATH}")
-            
-            except Exception as e:
-                save_error = True
-                st.error(f"❌ Erro ao salvar na rede: {e}")
-                st.info("O sistema gerou um arquivo ZIP para você baixar manualmente abaixo.")
-
-            # 4. FALLBACK: BOTÃO DE DOWNLOAD (SEMPRE APARECE SE HOUVER ERRO)
-            if save_error and all_generated_files:
-                zip_buffer = io.BytesIO()
-                with zipfile.ZipFile(zip_buffer, "w") as zf:
-                    for nome, conteudo in all_generated_files:
-                        zf.writestr(nome, conteudo)
-                
-                st.download_button(
-                    label="📥 Baixar Arquivos (Download Local)",
-                    data=zip_buffer.getvalue(),
-                    file_name=f"backup_folhas_{sufixo}.zip",
-                    mime="application/zip"
-                )
+            st.success("Processamento finalizado!")
 
 if __name__ == "__main__":
     main()

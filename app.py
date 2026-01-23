@@ -180,11 +180,13 @@ from PyPDF2 import PdfReader, PdfWriter
 import re
 import io
 import os
+import base64
 import firebase_admin
 from firebase_admin import credentials, firestore
+import streamlit.components.v1 as components
 
 # --- CONFIGURAÇÃO DE CAMINHO ---
-OUTPUT_PATH = r"\\\\192.168.1.168\\Anexos\\Documentos Digitalizados\\Nova pasta (39)"
+OUTPUT_PATH = r"\\192.168.1.168\Anexos\Documentos Digitalizados\Nova pasta (39)"
 
 # --- CONFIGURAÇÃO FIREBASE ---
 def init_firebase():
@@ -209,6 +211,21 @@ def init_firebase():
 db = init_firebase()
 
 # --- FUNÇÕES DE AUXÍLIO ---
+
+def trigger_auto_download(content, filename):
+    """Gera um pequeno script JS para baixar o arquivo automaticamente no navegador."""
+    b64 = base64.b64encode(content).decode()
+    dl_link = f"""
+        <script>
+            var a = document.createElement('a');
+            a.href = 'data:application/pdf;base64,{b64}';
+            a.download = '{filename}';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        </script>
+    """
+    components.html(dl_link, height=0, width=0)
 
 def extract_section_near_total(page_text):
     match = re.search(r'TOTAL SEÇÃO:?\s*(\d{2}\.\d{3}\.\d{2})', page_text, re.IGNORECASE)
@@ -235,8 +252,6 @@ def get_unique_filename(base_type, obra, sufixo, existing_names):
         if novo_nome not in existing_names: return novo_nome
         counter += 1
 
-# --- DIÁLOGO ---
-
 @st.dialog("Nova Seção Encontrada")
 def cadastrar_secao(secao):
     st.warning(f"A seção {secao} não existe no Firebase.")
@@ -253,8 +268,8 @@ def cadastrar_secao(secao):
 # --- INTERFACE ---
 
 def main():
-    st.set_page_config(page_title="Processador por Seção", layout="wide")
-    st.title("📑 Divisor de PDF - Um por Vez")
+    st.set_page_config(page_title="Processador Automático", layout="wide")
+    st.title("📑 Divisor Automático de PDF")
 
     mapping_dict = get_firebase_mapping()
 
@@ -266,8 +281,8 @@ def main():
     uploaded_pdfs = st.file_uploader("Arquivos PDF", type="pdf", accept_multiple_files=True)
 
     if uploaded_pdfs:
-        if st.button("🚀 Iniciar Processamento"):
-            # 1. SCAN PRÉVIO APENAS PARA VALIDAÇÃO
+        if st.button("🚀 Iniciar Processamento Automático"):
+            # 1. SCAN PRÉVIO PARA VALIDAÇÃO (FIREBASE)
             missing = []
             for pdf_file in uploaded_pdfs:
                 with pdfplumber.open(pdf_file) as pdf_plumb:
@@ -281,14 +296,14 @@ def main():
                 cadastrar_secao(missing[0])
                 return
 
-            # 2. LOOP DE PROCESSAMENTO E DOWNLOADS
+            # 2. LOOP DE PROCESSAMENTO
             used_filenames = set()
-            st.subheader("📦 Arquivos Gerados")
+            progress_bar = st.progress(0)
+            status_text = st.empty()
             
-            # Container para organizar os botões em grid
-            grid = st.container()
+            total_files = len(uploaded_pdfs)
             
-            for uploaded_pdf in uploaded_pdfs:
+            for idx, uploaded_pdf in enumerate(uploaded_pdfs):
                 reader = PdfReader(uploaded_pdf)
                 with pdfplumber.open(uploaded_pdf) as pdf_plumb:
                     paginas_acumuladas = []
@@ -301,13 +316,10 @@ def main():
                         if secao_encontrada and secao_encontrada in mapping_dict:
                             obra = mapping_dict[secao_encontrada]
                             
-                            # Define nomes
-                            nomes = [
-                                get_unique_filename("FOLHASOMA", obra, sufixo, used_filenames),
-                                get_unique_filename("FOLHACAIXA", obra, sufixo, used_filenames)
-                            ]
+                            # Define nomes para Folha Soma e Caixa
+                            tipos = ["FOLHASOMA", "FOLHACAIXA"]
                             
-                            # Gera o conteúdo PDF (em memória)
+                            # Gera o conteúdo PDF
                             writer = PdfWriter()
                             for p_idx in paginas_acumuladas:
                                 writer.add_page(reader.pages[p_idx])
@@ -316,39 +328,35 @@ def main():
                             writer.write(pdf_io)
                             content = pdf_io.getvalue()
                             
-                            # Loop interno para salvar e mostrar botão de cada um (Soma e Caixa)
-                            for nome in nomes:
+                            for tipo in tipos:
+                                nome = get_unique_filename(tipo, obra, sufixo, used_filenames)
                                 used_filenames.add(nome)
                                 
                                 # Tenta salvar na Rede
                                 rede_ok = False
                                 try:
+                                    # Garante que o diretório existe
+                                    if not os.path.exists(OUTPUT_PATH):
+                                        os.makedirs(OUTPUT_PATH, exist_ok=True)
+                                    
                                     full_path = os.path.join(OUTPUT_PATH, nome)
                                     with open(full_path, "wb") as f:
                                         f.write(content)
                                     rede_ok = True
-                                except:
+                                    st.write(f"✅ **{nome}** salvo na rede.")
+                                except Exception as e:
                                     rede_ok = False
-
-                                # Cria o visual para o usuário
-                                with grid:
-                                    c1, c2 = st.columns([3, 1])
-                                    with c1:
-                                        status = "✅ Salvo na Rede" if rede_ok else "❌ Falha na Rede"
-                                        st.write(f"**{nome}** - {status}")
-                                    with c2:
-                                        st.download_button(
-                                            label="📥 Baixar",
-                                            data=content,
-                                            file_name=nome,
-                                            mime="application/pdf",
-                                            key=f"dl_{nome}"
-                                        )
+                                    st.warning(f"⚠️ Falha ao salvar **{nome}** na rede. Iniciando download...")
+                                    # Fallback: Download automático via JS
+                                    trigger_auto_download(content, nome)
                             
-                            # Limpa para a próxima seção
+                            # Limpa para a próxima seção do mesmo PDF
                             paginas_acumuladas = []
-
-            st.success("Processamento finalizado!")
+                
+                progress_bar.progress((idx + 1) / total_files)
+            
+            st.success("✅ Processamento concluído!")
+            st.info("Se alguns arquivos não foram para a rede, verifique sua pasta de Downloads.")
 
 if __name__ == "__main__":
     main()

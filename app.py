@@ -174,6 +174,7 @@
 
 # if __name__ == "__main__":
 #     main()
+from anyio import Path
 import streamlit as st
 import pdfplumber
 from PyPDF2 import PdfReader, PdfWriter
@@ -185,7 +186,7 @@ from firebase_admin import credentials, firestore
 
 # --- CONFIGURAÇÃO DE CAMINHO ---
 # Caminho da rede configurado como constante
-OUTPUT_PATH = r"\\192.168.1.168\Anexos\Documentos Digitalizados\Nova pasta (39)"
+OUTPUT_PATH = Path(r"//192.168.1.168/Anexos/Documentos Digitalizados/Nova pasta (39)")
 
 
 # --- CONFIGURAÇÃO FIREBASE ---

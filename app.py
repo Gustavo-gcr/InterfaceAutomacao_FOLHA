@@ -186,7 +186,7 @@ import firebase_admin
 from firebase_admin import credentials, firestore
 
 # --- CONFIGURAÇÃO DE CAMINHO ---
-OUTPUT_PATH = zipfile.Path(r"//192.168.1.168/Anexos/Documentos Digitalizados/Nova pasta (39)")
+OUTPUT_PATH = r"\\\\192.168.1.168\\Anexos\\Documentos Digitalizados\\Nova pasta (39)"
 
 # --- CONFIGURAÇÃO FIREBASE ---
 def init_firebase():

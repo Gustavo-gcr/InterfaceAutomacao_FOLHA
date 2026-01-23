@@ -174,20 +174,19 @@
 
 # if __name__ == "__main__":
 #     main()
-from anyio import Path
+#
 import streamlit as st
 import pdfplumber
 from PyPDF2 import PdfReader, PdfWriter
 import re
 import io
-import os  # Adicionado para manipulação de caminhos
+import os
+import zipfile
 import firebase_admin
 from firebase_admin import credentials, firestore
 
 # --- CONFIGURAÇÃO DE CAMINHO ---
-# Caminho da rede configurado como constante
-OUTPUT_PATH = Path(r"//192.168.1.168/Anexos/Documentos Digitalizados/Nova pasta (39)")
-
+OUTPUT_PATH = zipfile.Path(r"//192.168.1.168/Anexos/Documentos Digitalizados/Nova pasta (39)")
 
 # --- CONFIGURAÇÃO FIREBASE ---
 def init_firebase():
@@ -215,12 +214,10 @@ db = init_firebase()
 
 def extract_section_near_total(page_text):
     match = re.search(r'TOTAL SEÇÃO:?\s*(\d{2}\.\d{3}\.\d{2})', page_text, re.IGNORECASE)
-    if match:
-        return match.group(1)
+    if match: return match.group(1)
     if "TOTAL SEÇÃO" in page_text:
         all_codes = re.findall(r'(\d{2}\.\d{3}\.\d{2})', page_text)
-        if all_codes:
-            return all_codes[-1]
+        if all_codes: return all_codes[-1]
     return None
 
 def get_firebase_mapping():
@@ -231,19 +228,13 @@ def get_firebase_mapping():
         mapping_dict[str(data['COD_SECAO'])] = str(data['ONDE LANÇAR'])
     return mapping_dict
 
-def get_unique_filename(base_type, obra, sufixo, target_dir):
-    """Verifica arquivos existentes na pasta de destino para evitar sobreposição"""
+def get_unique_filename(base_type, obra, sufixo, existing_names):
     nome_base = f"{base_type}{obra}{sufixo}.pdf"
-    full_path = os.path.join(target_dir, nome_base)
-    
-    if not os.path.exists(full_path):
-        return nome_base
-    
+    if nome_base not in existing_names: return nome_base
     counter = 1
     while True:
         novo_nome = f"{base_type}{counter}{obra}{sufixo}.pdf"
-        if not os.path.exists(os.path.join(target_dir, novo_nome)):
-            return novo_nome
+        if novo_nome not in existing_names: return novo_nome
         counter += 1
 
 # --- DIÁLOGO (POP-UP) ---
@@ -253,33 +244,23 @@ def cadastrar_secao(secao):
     st.warning(f"A seção {secao} não existe no Firebase.")
     obra_input = st.text_input("Onde Lançar (Obra)", placeholder="Ex: 425")
     empresa_input = st.number_input("Empresa", value=1)
-    
     if st.button("Salvar no Firebase"):
         if obra_input:
             db.collection('mapeamento_secoes').document(secao).set({
-                "COD_SECAO": secao,
-                "ONDE LANÇAR": obra_input,
-                "EMPRESA": empresa_input
+                "COD_SECAO": secao, "ONDE LANÇAR": obra_input, "EMPRESA": empresa_input
             })
-            st.success("Dados salvos na nuvem!")
+            st.success("Dados salvos!")
             st.rerun()
-        else:
-            st.error("Preencha a obra!")
 
 # --- INTERFACE ---
 
 def main():
     st.set_page_config(page_title="Processador por Seção", layout="wide")
-    st.title("📑 Divisor de PDF para Pasta de Rede")
-
-    # Verifica se a pasta de rede está acessível
-    if not os.path.exists(OUTPUT_PATH):
-        st.error(f"⚠️ Não foi possível acessar o caminho: {OUTPUT_PATH}. Verifique a conexão de rede.")
-        return
+    st.title("📑 Processador de PDFs")
 
     mapping_dict = get_firebase_mapping()
 
-    st.sidebar.header("Configuração de Data")
+    st.sidebar.header("Configuração")
     mes_pl = st.sidebar.text_input("Mês", value="01", max_chars=2)
     ano_pl = st.sidebar.text_input("Ano", value="26", max_chars=2)
     sufixo = f"{mes_pl}{ano_pl}"
@@ -287,10 +268,11 @@ def main():
     uploaded_pdfs = st.file_uploader("Arquivos PDF", type="pdf", accept_multiple_files=True)
 
     if uploaded_pdfs:
-        if st.button("🚀 Processar e Salvar na Rede"):
+        if st.button("🚀 Iniciar Processamento"):
+            all_generated_files = [] # Lista de tuplas (nome, bytes)
             missing = []
             
-            # Pré-scan
+            # 1. SCAN DE SEÇÕES FALTANTES
             for pdf_file in uploaded_pdfs:
                 with pdfplumber.open(pdf_file) as pdf_plumb:
                     for page in pdf_plumb.pages:
@@ -303,15 +285,12 @@ def main():
                 cadastrar_secao(missing[0])
                 return
 
-            processed_count = 0
-            
-            # Processamento e salvamento direto
+            # 2. PROCESSAMENTO EM MEMÓRIA
+            used_filenames = set()
             for uploaded_pdf in uploaded_pdfs:
                 reader = PdfReader(uploaded_pdf)
-                
                 with pdfplumber.open(uploaded_pdf) as pdf_plumb:
                     paginas_acumuladas = []
-                    
                     for i, page in enumerate(pdf_plumb.pages):
                         paginas_acumuladas.append(i)
                         text = page.extract_text() or ""
@@ -319,29 +298,57 @@ def main():
                         
                         if secao_encontrada and secao_encontrada in mapping_dict:
                             obra = mapping_dict[secao_encontrada]
-                            
-                            # Gera nomes únicos verificando a pasta real
-                            n_soma = get_unique_filename("FOLHASOMA", obra, sufixo, OUTPUT_PATH)
-                            n_caixa = get_unique_filename("FOLHACAIXA", obra, sufixo, OUTPUT_PATH)
+                            n_soma = get_unique_filename("FOLHASOMA", obra, sufixo, used_filenames)
+                            used_filenames.add(n_soma)
+                            n_caixa = get_unique_filename("FOLHACAIXA", obra, sufixo, used_filenames)
+                            used_filenames.add(n_caixa)
                             
                             writer = PdfWriter()
                             for p_idx in paginas_acumuladas:
                                 writer.add_page(reader.pages[p_idx])
                             
-                            # SALVAMENTO DIRETO NO DISCO
-                            for nome in [n_soma, n_caixa]:
-                                final_file_path = os.path.join(OUTPUT_PATH, nome)
-                                with open(final_file_path, "wb") as f_out:
-                                    writer.write(f_out)
-                                processed_count += 1
+                            pdf_bytes = io.BytesIO()
+                            writer.write(pdf_bytes)
+                            content = pdf_bytes.getvalue()
                             
+                            all_generated_files.append((n_soma, content))
+                            all_generated_files.append((n_caixa, content))
                             paginas_acumuladas = []
-                    
-                    if paginas_acumuladas:
-                        st.warning(f"Páginas ignoradas em {uploaded_pdf.name}: sem marcador de total.")
 
-            if processed_count > 0:
-                st.success(f"✅ Sucesso! {processed_count} arquivos foram salvos diretamente em: {OUTPUT_PATH}")
+            # 3. TENTATIVA DE SALVAMENTO NA REDE
+            save_error = False
+            files_saved_count = 0
+            
+            try:
+                if not os.path.exists(OUTPUT_PATH):
+                    raise Exception("Caminho de rede inacessível")
+                
+                for nome, conteudo in all_generated_files:
+                    full_path = os.path.join(OUTPUT_PATH, nome)
+                    with open(full_path, "wb") as f:
+                        f.write(conteudo)
+                    files_saved_count += 1
+                
+                st.success(f"✅ {files_saved_count} arquivos salvos com sucesso em: {OUTPUT_PATH}")
+            
+            except Exception as e:
+                save_error = True
+                st.error(f"❌ Erro ao salvar na rede: {e}")
+                st.info("O sistema gerou um arquivo ZIP para você baixar manualmente abaixo.")
+
+            # 4. FALLBACK: BOTÃO DE DOWNLOAD (SEMPRE APARECE SE HOUVER ERRO)
+            if save_error and all_generated_files:
+                zip_buffer = io.BytesIO()
+                with zipfile.ZipFile(zip_buffer, "w") as zf:
+                    for nome, conteudo in all_generated_files:
+                        zf.writestr(nome, conteudo)
+                
+                st.download_button(
+                    label="📥 Baixar Arquivos (Download Local)",
+                    data=zip_buffer.getvalue(),
+                    file_name=f"backup_folhas_{sufixo}.zip",
+                    mime="application/zip"
+                )
 
 if __name__ == "__main__":
     main()

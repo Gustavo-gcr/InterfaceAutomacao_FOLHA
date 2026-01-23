@@ -187,6 +187,7 @@ from firebase_admin import credentials, firestore
 # Caminho da rede configurado como constante
 OUTPUT_PATH = r"\\192.168.1.168\Anexos\Documentos Digitalizados\Nova pasta (39)"
 
+
 # --- CONFIGURAÇÃO FIREBASE ---
 def init_firebase():
     if not firebase_admin._apps:

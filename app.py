@@ -180,13 +180,10 @@ from PyPDF2 import PdfReader, PdfWriter
 import re
 import io
 import os
-import base64
 import firebase_admin
 from firebase_admin import credentials, firestore
-import streamlit.components.v1 as components
 
 # --- CONFIGURAÇÃO DE CAMINHO ---
-# Nota: Se rodar no Streamlit Cloud, esse caminho de rede não funcionará.
 OUTPUT_PATH = r"\\192.168.1.168\Anexos\Documentos Digitalizados\Nova pasta (39)"
 
 # --- CONFIGURAÇÃO FIREBASE ---
@@ -216,25 +213,12 @@ db = init_firebase()
 
 # --- FUNÇÕES DE AUXÍLIO ---
 
-def trigger_auto_download(content, filename, key):
-    """Injeta JavaScript para download forçado."""
-    b64 = base64.b64encode(content).decode()
-    dl_link = f"""
-        <script>
-            var a = document.createElement('a');
-            a.href = 'data:application/pdf;base64,{b64}';
-            a.download = '{filename}';
-            document.body.appendChild(a);
-            a.click();
-            a.remove();
-        </script>
-    """
-    # O uso de 'key' garante que o Streamlit renderize um componente novo para cada arquivo
-    components.html(dl_link, height=0, width=0)
-
 def extract_section_near_total(page_text):
+    # Tenta achar padrão exato perto de "TOTAL SEÇÃO"
     match = re.search(r'TOTAL SEÇÃO:?\s*(\d{2}\.\d{3}\.\d{2})', page_text, re.IGNORECASE)
     if match: return match.group(1)
+    
+    # Fallback: se tem o texto "TOTAL SEÇÃO", pega o último código da página
     if "TOTAL SEÇÃO" in page_text:
         all_codes = re.findall(r'(\d{2}\.\d{3}\.\d{2})', page_text)
         if all_codes: return all_codes[-1]
@@ -247,8 +231,8 @@ def get_firebase_mapping():
         for doc in docs:
             data = doc.to_dict()
             mapping_dict[str(data['COD_SECAO'])] = str(data['ONDE LANÇAR'])
-    except:
-        st.error("Erro ao buscar mapeamento no Firebase.")
+    except Exception as e:
+        st.error(f"Erro ao buscar mapeamento no Firebase: {e}")
     return mapping_dict
 
 def get_unique_filename(base_type, obra, sufixo, existing_names):
@@ -268,17 +252,24 @@ def cadastrar_secao(secao):
     empresa_input = st.number_input("Empresa", value=1)
     if st.button("Salvar no Firebase"):
         if obra_input:
-            db.collection('mapeamento_secoes').document(secao).set({
-                "COD_SECAO": secao, "ONDE LANÇAR": obra_input, "EMPRESA": empresa_input
-            })
-            st.success("Dados salvos!")
-            st.rerun()
+            try:
+                db.collection('mapeamento_secoes').document(secao).set({
+                    "COD_SECAO": secao, "ONDE LANÇAR": obra_input, "EMPRESA": empresa_input
+                })
+                st.success("Dados salvos!")
+                st.rerun()
+            except Exception as e:
+                st.error(f"Erro ao salvar: {e}")
 
 # --- INTERFACE PRINCIPAL ---
 
 def main():
     st.set_page_config(page_title="Processador Automático", layout="wide")
     st.title("📑 Divisor PDF: Rede ou Download")
+
+    # Inicializa estado para armazenar arquivos que falharam no envio para a rede
+    if 'arquivos_para_download' not in st.session_state:
+        st.session_state['arquivos_para_download'] = []
 
     mapping_dict = get_firebase_mapping()
 
@@ -291,8 +282,13 @@ def main():
 
     if uploaded_pdfs:
         if st.button("🚀 Iniciar Processo"):
-            # 1. Validação de Seções
+            # Limpa downloads anteriores
+            st.session_state['arquivos_para_download'] = []
+            
+            # 1. Validação de Seções (Passada rápida)
             missing = []
+            progress_bar = st.progress(0)
+            
             for pdf_file in uploaded_pdfs:
                 with pdfplumber.open(pdf_file) as pdf_plumb:
                     for page in pdf_plumb.pages:
@@ -307,10 +303,19 @@ def main():
 
             # 2. Processamento Real
             used_filenames = set()
-            container_status = st.container()
+            container_log = st.container()
             
-            for pdf_file in uploaded_pdfs:
+            # Espaço visual para logs
+            with container_log:
+                st.write("---")
+                st.subheader("Log de Processamento")
+
+            total_arquivos = len(uploaded_pdfs)
+            
+            for idx_file, pdf_file in enumerate(uploaded_pdfs):
                 reader = PdfReader(pdf_file)
+                
+                # Abre com pdfplumber para ler texto
                 with pdfplumber.open(pdf_file) as pdf_plumb:
                     paginas_acumuladas = []
                     
@@ -336,29 +341,60 @@ def main():
                                 nome = get_unique_filename(tipo, obra, sufixo, used_filenames)
                                 used_filenames.add(nome)
                                 
-                                # Tenta salvar na rede
                                 salvou_rede = False
+                                
+                                # TENTATIVA 1: Salvar na Rede
                                 try:
-                                    # Verifica se o caminho base existe antes de tentar salvar
-                                    if os.path.exists(os.path.dirname(OUTPUT_PATH)):
+                                    # Verifica se o diretório pai existe
+                                    if os.path.exists(OUTPUT_PATH):
                                         full_path = os.path.join(OUTPUT_PATH, nome)
                                         with open(full_path, "wb") as f:
                                             f.write(content)
                                         salvou_rede = True
-                                except:
+                                    else:
+                                        # Tenta criar se for mapeado localmente, mas se for UNC path pode falhar
+                                        pass 
+                                except Exception as e:
                                     salvou_rede = False
-
+                                
                                 if salvou_rede:
-                                    container_status.success(f"📁 {nome} -> Salvo na Rede")
+                                    container_log.success(f"✅ {nome} -> Salvo na Rede")
                                 else:
-                                    container_status.info(f"📥 {nome} -> Enviando para Download")
-                                    # Força o download no navegador com chave única
-                                    trigger_auto_download(content, nome, key=f"dl_{nome}_{i}")
-
-                            # Limpa para a próxima seção
+                                    container_log.warning(f"⚠️ {nome} -> Rede falhou. Adicionado para download.")
+                                    # Adiciona à lista de download manual
+                                    st.session_state['arquivos_para_download'].append({
+                                        "nome": nome,
+                                        "dados": content
+                                    })
+                            
+                            # Limpa buffer
                             paginas_acumuladas = []
-            
-            st.success("✅ Fim do processamento!")
+                
+                # Atualiza barra de progresso
+                progress_bar.progress((idx_file + 1) / total_arquivos)
+
+            st.success("🏁 Processamento Finalizado!")
+
+    # --- ÁREA DE DOWNLOAD MANUAL ---
+    # Isso garante que os botões persistam e funcionem corretamente "um por um"
+    if st.session_state['arquivos_para_download']:
+        st.write("---")
+        st.subheader("📥 Arquivos para Download (Não salvos na rede)")
+        st.info("Estes arquivos não puderam ser salvos no caminho de rede. Baixe-os abaixo:")
+        
+        # Cria colunas para organizar os botões (opcional, para ficar mais bonito)
+        cols = st.columns(3)
+        
+        for index, item in enumerate(st.session_state['arquivos_para_download']):
+            col = cols[index % 3]
+            with col:
+                st.download_button(
+                    label=f"⬇️ {item['nome']}",
+                    data=item['dados'],
+                    file_name=item['nome'],
+                    mime="application/pdf",
+                    key=f"btn_{index}"
+                )
 
 if __name__ == "__main__":
     main()

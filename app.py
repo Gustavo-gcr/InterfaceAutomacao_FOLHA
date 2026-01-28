@@ -345,11 +345,11 @@ def main():
                             if secao_encontrada and secao_encontrada in mapping_dict:
                                 obra = mapping_dict[secao_encontrada]
                                 
-                                # ALTERAÇÃO AQUI: Trocado "FOLHASOMA" por "SM" e "FOLHACAIXA" por "CX"
-                                n_soma = get_unique_filename("SM", obra, sufixo, valor_encontrado, filenames_in_zip)
+                                # --- ALTERAÇÃO AQUI: Prefixos corrigidos para FOLHASM e FOLHACX ---
+                                n_soma = get_unique_filename("FOLHASM", obra, sufixo, valor_encontrado, filenames_in_zip)
                                 filenames_in_zip.add(n_soma)
                                 
-                                n_caixa = get_unique_filename("CX", obra, sufixo, valor_encontrado, filenames_in_zip)
+                                n_caixa = get_unique_filename("FOLHACX", obra, sufixo, valor_encontrado, filenames_in_zip)
                                 filenames_in_zip.add(n_caixa)
                                 
                                 writer = PdfWriter()

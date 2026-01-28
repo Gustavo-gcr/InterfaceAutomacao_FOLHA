@@ -291,7 +291,7 @@ def cadastrar_secao(secao):
 
 def main():
     st.set_page_config(page_title="Processador por Seção", layout="wide")
-    st.title("📑 Divisor de PDF (Com Valor no Nome)")
+    st.title("📑 Divisor de PDF")
 
     mapping_dict = get_firebase_mapping()
 

@@ -1,0 +1,2813 @@
+[
+    {
+        "COD_SECAO":"01.001.01",
+        "ONDE LANÇAR":"EC007",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.02",
+        "ONDE LANÇAR":"EC002",
+        "EMPRESA":1
+        
+    },
+    {
+        "COD_SECAO":"01.001.03",
+        "ONDE LANÇAR":"001",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.04",
+        "ONDE LANÇAR":"EC010",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.05",
+        "ONDE LANÇAR":"EC011",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.06",
+        "ONDE LANÇAR":"001",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.07",
+        "ONDE LANÇAR":"007",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.08",
+        "ONDE LANÇAR":"EC012",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.09",
+        "ONDE LANÇAR":"EC009",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.10",
+        "ONDE LANÇAR":294,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.11",
+        "ONDE LANÇAR":"EC008",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.12",
+        "ONDE LANÇAR":"015",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.13",
+        "ONDE LANÇAR":"010",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.14",
+        "ONDE LANÇAR":292,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.15",
+        "ONDE LANÇAR":"008",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.16",
+        "ONDE LANÇAR":"EC005",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.17",
+        "ONDE LANÇAR":"EC004",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.18",
+        "ONDE LANÇAR":274,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.19",
+        "ONDE LANÇAR":"007N1",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.20",
+        "ONDE LANÇAR":"",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.21",
+        "ONDE LANÇAR":"021",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.22",
+        "ONDE LANÇAR":332,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.23",
+        "ONDE LANÇAR":"EC013",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.24",
+        "ONDE LANÇAR":"074",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.25",
+        "ONDE LANÇAR":"EC014",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.26",
+        "ONDE LANÇAR":509,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.27",
+        "ONDE LANÇAR":"EC019",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.28",
+        "ONDE LANÇAR":"010",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.29",
+        "ONDE LANÇAR":"008IS",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.30",
+        "ONDE LANÇAR":"008EG",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.31",
+        "ONDE LANÇAR":"EC017",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.32",
+        "ONDE LANÇAR":"074",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.33",
+        "ONDE LANÇAR":"010",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.34",
+        "ONDE LANÇAR":"EC021",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.35",
+        "ONDE LANÇAR":"EC022",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.36",
+        "ONDE LANÇAR":"007N3",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.37",
+        "ONDE LANÇAR":"008CM",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.38",
+        "ONDE LANÇAR":"544ADM",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.39",
+        "ONDE LANÇAR":548,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.40",
+        "ONDE LANÇAR":569,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.41",
+        "ONDE LANÇAR":571,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.42",
+        "ONDE LANÇAR":"EC024",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.43",
+        "ONDE LANÇAR":"008RS",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.44",
+        "ONDE LANÇAR":"010",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.001.60",
+        "ONDE LANÇAR":622,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.076.01",
+        "ONDE LANÇAR":"076",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.076.02",
+        "ONDE LANÇAR":"076",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.076.03",
+        "ONDE LANÇAR":"076",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.081.01",
+        "ONDE LANÇAR":"081",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.081.02",
+        "ONDE LANÇAR":"081",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.081.03",
+        "ONDE LANÇAR":"081",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.082.02",
+        "ONDE LANÇAR":182,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.182.03",
+        "ONDE LANÇAR":"024",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.218.01",
+        "ONDE LANÇAR":"008",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.218.02",
+        "ONDE LANÇAR":"008",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.229.01",
+        "ONDE LANÇAR":229,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.229.02",
+        "ONDE LANÇAR":229,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.229.03",
+        "ONDE LANÇAR":229,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.229.04",
+        "ONDE LANÇAR":229,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.229.05",
+        "ONDE LANÇAR":229,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.229.06",
+        "ONDE LANÇAR":229,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.229.07",
+        "ONDE LANÇAR":229,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.229.08",
+        "ONDE LANÇAR":229,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.229.09",
+        "ONDE LANÇAR":229,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.229.10",
+        "ONDE LANÇAR":229,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.229.11",
+        "ONDE LANÇAR":229,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.229.12",
+        "ONDE LANÇAR":229,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.229.13",
+        "ONDE LANÇAR":229,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.229.14",
+        "ONDE LANÇAR":229,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.229.15",
+        "ONDE LANÇAR":229,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.229.16",
+        "ONDE LANÇAR":229,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.229.17",
+        "ONDE LANÇAR":229,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.229.18",
+        "ONDE LANÇAR":229,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.229.19",
+        "ONDE LANÇAR":229,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.229.20",
+        "ONDE LANÇAR":229,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.229.21",
+        "ONDE LANÇAR":"008",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.248.01",
+        "ONDE LANÇAR":248,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.248.02",
+        "ONDE LANÇAR":248,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.248.03",
+        "ONDE LANÇAR":248,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.248.04",
+        "ONDE LANÇAR":248,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.248.05",
+        "ONDE LANÇAR":248,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.248.06",
+        "ONDE LANÇAR":248,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.248.07",
+        "ONDE LANÇAR":248,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.248.08",
+        "ONDE LANÇAR":248,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.248.09",
+        "ONDE LANÇAR":248,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.248.10",
+        "ONDE LANÇAR":248,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.248.11",
+        "ONDE LANÇAR":248,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.248.12",
+        "ONDE LANÇAR":248,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.248.13",
+        "ONDE LANÇAR":248,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.248.14",
+        "ONDE LANÇAR":248,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.248.15",
+        "ONDE LANÇAR":248,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.248.16",
+        "ONDE LANÇAR":248,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.248.17",
+        "ONDE LANÇAR":248,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.248.18",
+        "ONDE LANÇAR":248,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.248.19",
+        "ONDE LANÇAR":248,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.248.20",
+        "ONDE LANÇAR":248,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.248.21",
+        "ONDE LANÇAR":248,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.248.22",
+        "ONDE LANÇAR":248,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.248.23",
+        "ONDE LANÇAR":248,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.248.24",
+        "ONDE LANÇAR":248,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.248.25",
+        "ONDE LANÇAR":248,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.248.26",
+        "ONDE LANÇAR":248,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.248.27",
+        "ONDE LANÇAR":248,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.248.28",
+        "ONDE LANÇAR":248,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.248.29",
+        "ONDE LANÇAR":248,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.248.30",
+        "ONDE LANÇAR":248,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.248.31",
+        "ONDE LANÇAR":248,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.248.32",
+        "ONDE LANÇAR":248,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.248.33",
+        "ONDE LANÇAR":248,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.248.34",
+        "ONDE LANÇAR":248,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.320.01",
+        "ONDE LANÇAR":320,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.320.02",
+        "ONDE LANÇAR":320,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.321.01",
+        "ONDE LANÇAR":321,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.321.02",
+        "ONDE LANÇAR":321,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.358.01",
+        "ONDE LANÇAR":358,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.358.02",
+        "ONDE LANÇAR":358,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.362.01",
+        "ONDE LANÇAR":362,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.362.02",
+        "ONDE LANÇAR":362,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.365.01",
+        "ONDE LANÇAR":365,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.365.02",
+        "ONDE LANÇAR":365,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.366.01",
+        "ONDE LANÇAR":366,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.366.02",
+        "ONDE LANÇAR":366,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.369.01",
+        "ONDE LANÇAR":369,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.369.02",
+        "ONDE LANÇAR":369,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.378.01",
+        "ONDE LANÇAR":378,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.378.02",
+        "ONDE LANÇAR":378,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.386.01",
+        "ONDE LANÇAR":386,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.386.02",
+        "ONDE LANÇAR":386,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.393.01",
+        "ONDE LANÇAR":393,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.393.02",
+        "ONDE LANÇAR":393,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.394.01",
+        "ONDE LANÇAR":394,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.394.02",
+        "ONDE LANÇAR":394,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.395.01",
+        "ONDE LANÇAR":395,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.395.02",
+        "ONDE LANÇAR":395,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.403.01",
+        "ONDE LANÇAR":403,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.403.02",
+        "ONDE LANÇAR":403,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.407.01",
+        "ONDE LANÇAR":407,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.407.02",
+        "ONDE LANÇAR":407,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.433.01",
+        "ONDE LANÇAR":433,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.433.02",
+        "ONDE LANÇAR":433,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.447.01",
+        "ONDE LANÇAR":447,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.447.02",
+        "ONDE LANÇAR":447,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.451.01",
+        "ONDE LANÇAR":451,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.451.02",
+        "ONDE LANÇAR":451,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.453.01",
+        "ONDE LANÇAR":453,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.453.02",
+        "ONDE LANÇAR":453,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.458.01",
+        "ONDE LANÇAR":458,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.458.02",
+        "ONDE LANÇAR":458,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.482.01",
+        "ONDE LANÇAR":482,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.482.02",
+        "ONDE LANÇAR":482,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.493.01",
+        "ONDE LANÇAR":493,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.493.02",
+        "ONDE LANÇAR":493,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.493.02",
+        "ONDE LANÇAR":493,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.500.01",
+        "ONDE LANÇAR":500,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.500.02",
+        "ONDE LANÇAR":500,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.507.01",
+        "ONDE LANÇAR":507,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.507.02",
+        "ONDE LANÇAR":507,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.509.01",
+        "ONDE LANÇAR":509,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.509.02",
+        "ONDE LANÇAR":509,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.509.02",
+        "ONDE LANÇAR":509,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.514.01",
+        "ONDE LANÇAR":514,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.514.02",
+        "ONDE LANÇAR":514,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.518.01",
+        "ONDE LANÇAR":518,
+        "EMPRESA":518
+    },
+    {
+        "COD_SECAO":"01.518.02",
+        "ONDE LANÇAR":518,
+        "EMPRESA":518
+    },
+    {
+        "COD_SECAO":"01.532.01",
+        "ONDE LANÇAR":532,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.532.02",
+        "ONDE LANÇAR":532,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.533.01",
+        "ONDE LANÇAR":533,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.533.02",
+        "ONDE LANÇAR":533,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.534.01",
+        "ONDE LANÇAR":534,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.534.02",
+        "ONDE LANÇAR":534,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.534.02",
+        "ONDE LANÇAR":534,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.541.01",
+        "ONDE LANÇAR":541,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.541.02",
+        "ONDE LANÇAR":541,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.543.01",
+        "ONDE LANÇAR":543,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.543.02",
+        "ONDE LANÇAR":543,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.545.01",
+        "ONDE LANÇAR":545,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.545.02",
+        "ONDE LANÇAR":545,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.558.01",
+        "ONDE LANÇAR":558,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.558.02",
+        "ONDE LANÇAR":558,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.559.01",
+        "ONDE LANÇAR":559,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.559.02",
+        "ONDE LANÇAR":559,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.566.01",
+        "ONDE LANÇAR":566,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.566.02",
+        "ONDE LANÇAR":566,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.567.01",
+        "ONDE LANÇAR":567,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.567.02",
+        "ONDE LANÇAR":567,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.585.01",
+        "ONDE LANÇAR":585,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.585.02",
+        "ONDE LANÇAR":585,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.590.01",
+        "ONDE LANÇAR":590,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.590.02",
+        "ONDE LANÇAR":590,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.613.01",
+        "ONDE LANÇAR":613,
+        "EMPRESA":613
+    },
+    {
+        "COD_SECAO":"01.613.02",
+        "ONDE LANÇAR":613,
+        "EMPRESA":613
+    },
+    {
+        "COD_SECAO":"01.645.01",
+        "ONDE LANÇAR":645,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.645.02",
+        "ONDE LANÇAR":645,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.655.01",
+        "ONDE LANÇAR":655,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.655.02",
+        "ONDE LANÇAR":655,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"02.298.01",
+        "ONDE LANÇAR":298,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"02.298.02",
+        "ONDE LANÇAR":298,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"02.300.01",
+        "ONDE LANÇAR":300,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"02.300.02",
+        "ONDE LANÇAR":300,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"02.304.03",
+        "ONDE LANÇAR":"OE001",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"02.334.01",
+        "ONDE LANÇAR":334,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"02.334.02",
+        "ONDE LANÇAR":334,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"02.351.01",
+        "ONDE LANÇAR":351,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"02.351.02",
+        "ONDE LANÇAR":351,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"02.352.01",
+        "ONDE LANÇAR":352,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"02.352.02",
+        "ONDE LANÇAR":352,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"02.359.01",
+        "ONDE LANÇAR":359,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"02.359.02",
+        "ONDE LANÇAR":359,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"02.425.01",
+        "ONDE LANÇAR":425,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"02.425.02",
+        "ONDE LANÇAR":425,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"02.473.01",
+        "ONDE LANÇAR":473,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"02.473.02",
+        "ONDE LANÇAR":473,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"02.481.01",
+        "ONDE LANÇAR":481,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"02.481.02",
+        "ONDE LANÇAR":481,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"02.553.01",
+        "ONDE LANÇAR":553,
+        "EMPRESA":553
+    },
+    {
+        "COD_SECAO":"02.553.02",
+        "ONDE LANÇAR":553,
+        "EMPRESA":553
+    },
+    {
+        "COD_SECAO":"02.562.01",
+        "ONDE LANÇAR":562,
+        "EMPRESA":562
+    },
+    {
+        "COD_SECAO":"02.562.02",
+        "ONDE LANÇAR":562,
+        "EMPRESA":562
+    },
+    {
+        "COD_SECAO":"02.599.01",
+        "ONDE LANÇAR":599,
+        "EMPRESA":599
+    },
+    {
+        "COD_SECAO":"02.599.02",
+        "ONDE LANÇAR":599,
+        "EMPRESA":599
+    },
+    {
+        "COD_SECAO":"03.001.02",
+        "ONDE LANÇAR":443,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.001.02",
+        "ONDE LANÇAR":443,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.001.03",
+        "ONDE LANÇAR":444,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.001.03",
+        "ONDE LANÇAR":444,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.001.04",
+        "ONDE LANÇAR":505,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.001.04",
+        "ONDE LANÇAR":505,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.247.01",
+        "ONDE LANÇAR":247,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.247.02",
+        "ONDE LANÇAR":247,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.249.01",
+        "ONDE LANÇAR":249,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.249.02",
+        "ONDE LANÇAR":249,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.270.01",
+        "ONDE LANÇAR":270,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.270.02",
+        "ONDE LANÇAR":270,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.271.01",
+        "ONDE LANÇAR":270,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.271.02",
+        "ONDE LANÇAR":270,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.326.01",
+        "ONDE LANÇAR":326,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.326.02",
+        "ONDE LANÇAR":326,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.327.01",
+        "ONDE LANÇAR":327,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.327.02",
+        "ONDE LANÇAR":327,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.327.03",
+        "ONDE LANÇAR":591,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.328.01",
+        "ONDE LANÇAR":327,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.328.02",
+        "ONDE LANÇAR":327,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.336.01",
+        "ONDE LANÇAR":336,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.336.02",
+        "ONDE LANÇAR":336,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.337.01",
+        "ONDE LANÇAR":336,
+        "EMPRESA":1
+    },    
+    {
+
+        "COD_SECAO":"03.337.02",
+        "ONDE LANÇAR":336,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.339.01",
+        "ONDE LANÇAR":339,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.339.02",
+        "ONDE LANÇAR":339,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.340.01",
+        "ONDE LANÇAR":339,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.340.02",
+        "ONDE LANÇAR":339,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.357.01",
+        "ONDE LANÇAR":357,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.357.02",
+        "ONDE LANÇAR":357,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.357.03",
+        "ONDE LANÇAR":"007N2",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.358.01",
+        "ONDE LANÇAR":357,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.358.02",
+        "ONDE LANÇAR":357,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.396.01",
+        "ONDE LANÇAR":396,
+        "EMPRESA":396
+    },
+    {
+        "COD_SECAO":"03.396.02",
+        "ONDE LANÇAR":396,
+        "EMPRESA":396
+    },
+    {
+        "COD_SECAO":"03.397.01",
+        "ONDE LANÇAR":397,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.397.02",
+        "ONDE LANÇAR":397,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.418.01",
+        "ONDE LANÇAR":418,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.418.02",
+        "ONDE LANÇAR":418,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"16.630.03",
+        "ONDE LANÇAR":"630M",
+        "EMPRESA":630
+    },
+    {
+        "COD_SECAO":"16.630.02",
+        "ONDE LANÇAR":"630M",
+        "EMPRESA":630
+    },
+    {
+        "COD_SECAO":"03.434.01",
+        "ONDE LANÇAR":434,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.434.02",
+        "ONDE LANÇAR":434,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.434.02",
+        "ONDE LANÇAR":434,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.463.01",
+        "ONDE LANÇAR":463,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.463.02",
+        "ONDE LANÇAR":463,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.480.01",
+        "ONDE LANÇAR":480,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.480.02",
+        "ONDE LANÇAR":480,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.480.02",
+        "ONDE LANÇAR":480,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.528.01",
+        "ONDE LANÇAR":528,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.528.02",
+        "ONDE LANÇAR":528,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.531.01",
+        "ONDE LANÇAR":531,
+        "EMPRESA":531
+    },
+    {
+        "COD_SECAO":"03.531.02",
+        "ONDE LANÇAR":531,
+        "EMPRESA":531
+    },
+    {
+        "COD_SECAO":"03.574.01",
+        "ONDE LANÇAR":574,
+        "EMPRESA":574
+    },
+    {
+        "COD_SECAO":"03.574.02",
+        "ONDE LANÇAR":574,
+        "EMPRESA":574
+    },
+    {
+        "COD_SECAO":"03.581.01",
+        "ONDE LANÇAR":581,
+        "EMPRESA":581
+    },
+    {
+        "COD_SECAO":"03.581.02",
+        "ONDE LANÇAR":581,
+        "EMPRESA":581
+    },
+    {
+        "COD_SECAO":"03.584.01",
+        "ONDE LANÇAR":581,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.584.02",
+        "ONDE LANÇAR":581,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.596.01",
+        "ONDE LANÇAR":596,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"03.596.02",
+        "ONDE LANÇAR":596,
+        "EMPRESA":596
+    },
+    {
+        "COD_SECAO":"03.636.01",
+        "ONDE LANÇAR":636,
+        "EMPRESA":636
+    },
+    {
+        "COD_SECAO":"03.636.02",
+        "ONDE LANÇAR":636,
+        "EMPRESA":636
+    },
+    {
+        "COD_SECAO":"04.259.02",
+        "ONDE LANÇAR":259,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"04.338.01",
+        "ONDE LANÇAR":338,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"04.338.02",
+        "ONDE LANÇAR":338,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"04.380.02",
+        "ONDE LANÇAR":380,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"04.380.03",
+        "ONDE LANÇAR":"380B",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"04.437.01",
+        "ONDE LANÇAR":"437B",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"04.437.02",
+        "ONDE LANÇAR":"437B",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"04.454.01",
+        "ONDE LANÇAR":454,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"04.494.01",
+        "ONDE LANÇAR":494,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"04.494.02",
+        "ONDE LANÇAR":494,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"04.496.02",
+        "ONDE LANÇAR":496,
+        "EMPRESA":496
+    },
+    {
+        "COD_SECAO":"04.580.01",
+        "ONDE LANÇAR":580,
+        "EMPRESA":580
+    },
+    {
+        "COD_SECAO":"04.580.02",
+        "ONDE LANÇAR":580,
+        "EMPRESA":580
+    },
+    {
+        "COD_SECAO":"04.580.03",
+        "ONDE LANÇAR":594,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"04.620.01",
+        "ONDE LANÇAR":620,
+        "EMPRESA":620
+    },
+    {
+        "COD_SECAO":"04.620.02",
+        "ONDE LANÇAR":620,
+        "EMPRESA":620
+    },
+    {
+        "COD_SECAO":"04.624.01",
+        "ONDE LANÇAR":624,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"04.624.02",
+        "ONDE LANÇAR":624,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"06.291.02",
+        "ONDE LANÇAR":291,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"06.438.01",
+        "ONDE LANÇAR":438,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"06.438.02",
+        "ONDE LANÇAR":438,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"06.479.01",
+        "ONDE LANÇAR":479,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"06.479.02",
+        "ONDE LANÇAR":479,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"07.001.02",
+        "ONDE LANÇAR":221,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"07.001.02",
+        "ONDE LANÇAR":221,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"07.276.01",
+        "ONDE LANÇAR":276,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"07.276.02",
+        "ONDE LANÇAR":276,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"07.331.01",
+        "ONDE LANÇAR":331,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"07.331.02",
+        "ONDE LANÇAR":331,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"07.341.01",
+        "ONDE LANÇAR":341,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"07.341.02",
+        "ONDE LANÇAR":341,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"07.342.02",
+        "ONDE LANÇAR":342,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"07.349.01",
+        "ONDE LANÇAR":342,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"07.368.04",
+        "ONDE LANÇAR":"007S1",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"07.376.02",
+        "ONDE LANÇAR":376,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"07.381.01",
+        "ONDE LANÇAR":381,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"07.381.02",
+        "ONDE LANÇAR":381,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"07.400.01",
+        "ONDE LANÇAR":400,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"07.400.02",
+        "ONDE LANÇAR":400,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"07.455.01",
+        "ONDE LANÇAR":455,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"07.455.02",
+        "ONDE LANÇAR":455,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"07.471.02",
+        "ONDE LANÇAR":471,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"07.472.02",
+        "ONDE LANÇAR":472,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"07.529.01",
+        "ONDE LANÇAR":529,
+        "EMPRESA":529
+    },
+    {
+        "COD_SECAO":"07.529.02",
+        "ONDE LANÇAR":529,
+        "EMPRESA":529
+    },
+    {
+        "COD_SECAO":"07.549.01",
+        "ONDE LANÇAR":549,
+        "EMPRESA":549
+    },
+    {
+        "COD_SECAO":"07.549.02",
+        "ONDE LANÇAR":549,
+        "EMPRESA":549
+    },
+    {
+        "COD_SECAO":"07.565.01",
+        "ONDE LANÇAR":565,
+        "EMPRESA":565
+    },
+    {
+        "COD_SECAO":"07.565.02",
+        "ONDE LANÇAR":565,
+        "EMPRESA":565
+    },
+    {
+        "COD_SECAO":"07.577.01",
+        "ONDE LANÇAR":577,
+        "EMPRESA":577
+    },
+    {
+        "COD_SECAO":"07.577.02",
+        "ONDE LANÇAR":577,
+        "EMPRESA":577
+    },
+    {
+        "COD_SECAO":"07.584.01",
+        "ONDE LANÇAR":584,
+        "EMPRESA":584
+    },
+    {
+        "COD_SECAO":"07.584.02",
+        "ONDE LANÇAR":584,
+        "EMPRESA":584
+    },
+    {
+        "COD_SECAO":"07.587.01",
+        "ONDE LANÇAR":587,
+        "EMPRESA":587
+    },
+    {
+        "COD_SECAO":"07.587.02",
+        "ONDE LANÇAR":587,
+        "EMPRESA":587
+    },
+    {
+        "COD_SECAO":"07.609.01",
+        "ONDE LANÇAR":609,
+        "EMPRESA":609
+    },
+    {
+        "COD_SECAO":"07.609.02",
+        "ONDE LANÇAR":609,
+        "EMPRESA":609
+    },
+    {
+        "COD_SECAO":"08.228.02",
+        "ONDE LANÇAR":228,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"08.319.01",
+        "ONDE LANÇAR":319,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"08.319.02",
+        "ONDE LANÇAR":319,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"08.374.01",
+        "ONDE LANÇAR":374,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"08.374.02",
+        "ONDE LANÇAR":374,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"08.469.02",
+        "ONDE LANÇAR":469,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"08.417.01",
+        "ONDE LANÇAR":417,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"08.417.02",
+        "ONDE LANÇAR":417,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"08.422.02",
+        "ONDE LANÇAR":422,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"08.426.01",
+        "ONDE LANÇAR":426,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"08.426.02",
+        "ONDE LANÇAR":426,
+        "EMPRESA":1
+    },
+    
+    {
+        "COD_SECAO":"08.560.02",
+        "ONDE LANÇAR":560,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"08.623.02",
+        "ONDE LANÇAR":623,
+        "EMPRESA":623
+    },
+    {
+        "COD_SECAO":"08.627.01",
+        "ONDE LANÇAR":627,
+        "EMPRESA":627
+    },
+    {
+        "COD_SECAO":"08.627.02",
+        "ONDE LANÇAR":627,
+        "EMPRESA":627
+    },
+    {
+        "COD_SECAO":"09.001.03",
+        "ONDE LANÇAR":445,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"09.258.01",
+        "ONDE LANÇAR":258,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"09.258.02",
+        "ONDE LANÇAR":258,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"09.294.01",
+        "ONDE LANÇAR":294,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"09.294.02",
+        "ONDE LANÇAR":294,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"09.295.01",
+        "ONDE LANÇAR":295,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"09.295.02",
+        "ONDE LANÇAR":295,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"09.392.01",
+        "ONDE LANÇAR":392,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"09.392.02",
+        "ONDE LANÇAR":392,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"09.427.01",
+        "ONDE LANÇAR":427,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"09.427.02",
+        "ONDE LANÇAR":427,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"09.459.01",
+        "ONDE LANÇAR":459,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"09.459.02",
+        "ONDE LANÇAR":459,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"09.555.02",
+        "ONDE LANÇAR":555,
+        "EMPRESA":555
+    },
+    {
+        "COD_SECAO":"09.579.01",
+        "ONDE LANÇAR":579,
+        "EMPRESA":579
+    },
+    {
+        "COD_SECAO":"09.579.02",
+        "ONDE LANÇAR":579,
+        "EMPRESA":579
+    },
+    {
+        "COD_SECAO":"09.621.01",
+        "ONDE LANÇAR":621,
+        "EMPRESA":621
+    },
+    {
+        "COD_SECAO":"09.621.02",
+        "ONDE LANÇAR":621,
+        "EMPRESA":621
+    },
+    {
+        "COD_SECAO":"10.290.01",
+        "ONDE LANÇAR":290,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"10.290.02",
+        "ONDE LANÇAR":290,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"10.583.01",
+        "ONDE LANÇAR":583,
+        "EMPRESA":583
+    },
+    {
+        "COD_SECAO":"11.432.01",
+        "ONDE LANÇAR":432,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"11.432.02",
+        "ONDE LANÇAR":432,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"11.474.01",
+        "ONDE LANÇAR":474,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"11.474.02",
+        "ONDE LANÇAR":474,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"11.535.01",
+        "ONDE LANÇAR":535,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"11.535.02",
+        "ONDE LANÇAR":535,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"11.535.03",
+        "ONDE LANÇAR":552,
+        "EMPRESA":1
+    },
+
+
+    {
+        "COD_SECAO":"11.536.02",
+        "ONDE LANÇAR":535,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"12.216.01",
+        "ONDE LANÇAR":"008",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"12.216.02",
+        "ONDE LANÇAR":"008",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"12.217.02",
+        "ONDE LANÇAR":"216X",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"12.238.01",
+        "ONDE LANÇAR":"008",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"12.238.02",
+        "ONDE LANÇAR":"008",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"12.452.01",
+        "ONDE LANÇAR":452,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"12.452.02",
+        "ONDE LANÇAR":452,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"12.586.02",
+        "ONDE LANÇAR":586,
+        "EMPRESA":586
+    },
+    {
+        "COD_SECAO":"12.589.01",
+        "ONDE LANÇAR":589,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"12.589.02",
+        "ONDE LANÇAR":589,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"12.616.01",
+        "ONDE LANÇAR":616,
+        "EMPRESA":616
+    },
+    {
+        "COD_SECAO":"12.616.02",
+        "ONDE LANÇAR":616,
+        "EMPRESA":616
+    },
+    {
+        "COD_SECAO":"12.619.01",
+        "ONDE LANÇAR":619,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"12.626.02",
+        "ONDE LANÇAR":626,
+        "EMPRESA":626
+    },
+    {
+        "COD_SECAO":"14.582.01",
+        "ONDE LANÇAR":582,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"14.582.02",
+        "ONDE LANÇAR":582,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"14.607.01",
+        "ONDE LANÇAR":607,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"16.297.02",
+        "ONDE LANÇAR":297,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"16.322.02",
+        "ONDE LANÇAR":322,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"16.415.02",
+        "ONDE LANÇAR":415,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"16.456.01",
+        "ONDE LANÇAR":456,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"16.456.02",
+        "ONDE LANÇAR":456,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"16.501.01",
+        "ONDE LANÇAR":501,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"16.501.02",
+        "ONDE LANÇAR":501,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"16.539.01",
+        "ONDE LANÇAR":539,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"16.539.02",
+        "ONDE LANÇAR":539,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"16.612.02",
+        "ONDE LANÇAR":612,
+        "EMPRESA":612
+    },
+    {
+        "COD_SECAO":"17.330.01",
+        "ONDE LANÇAR":330,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"17.330.02",
+        "ONDE LANÇAR":330,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"17.568.01",
+        "ONDE LANÇAR":568,
+        "EMPRESA":568
+    },
+    {
+        "COD_SECAO":"17.568.02",
+        "ONDE LANÇAR":568,
+        "EMPRESA":568
+    },
+    {
+        "COD_SECAO":"17.572.02",
+        "ONDE LANÇAR":572,
+        "EMPRESA":572
+    },
+    {
+        "COD_SECAO":"17.598.01",
+        "ONDE LANÇAR":598,
+        "EMPRESA":598
+    },
+    {
+        "COD_SECAO":"17.598.02",
+        "ONDE LANÇAR":598,
+        "EMPRESA":598
+    },
+    {
+        "COD_SECAO":"17.618.01",
+        "ONDE LANÇAR":618,
+        "EMPRESA":618
+    },
+    {
+        "COD_SECAO":"17.618.02",
+        "ONDE LANÇAR":618,
+        "EMPRESA":618
+    },
+    {
+        "COD_SECAO":"18.001.03",
+        "ONDE LANÇAR":"007N4",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"18.266.01",
+        "ONDE LANÇAR":266,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"18.266.02",
+        "ONDE LANÇAR":266,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"18.504.01",
+        "ONDE LANÇAR":504,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"18.504.02",
+        "ONDE LANÇAR":504,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"18.546.01",
+        "ONDE LANÇAR":546,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"18.546.02",
+        "ONDE LANÇAR":546,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"19.468.02",
+        "ONDE LANÇAR":468,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"19.588.01",
+        "ONDE LANÇAR":588,
+        "EMPRESA":588
+    },
+    {
+        "COD_SECAO":"19.588.02",
+        "ONDE LANÇAR":588,
+        "EMPRESA":588
+    },
+    {
+        "COD_SECAO":"19.603.01",
+        "ONDE LANÇAR":603,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"19.603.02",
+        "ONDE LANÇAR":603,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"20.001.02",
+        "ONDE LANÇAR":254,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"20.001.03",
+        "ONDE LANÇAR":"007N1",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"20.356.02",
+        "ONDE LANÇAR":356,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"20.363.01",
+        "ONDE LANÇAR":363,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"20.498.01",
+        "ONDE LANÇAR":498,
+        "EMPRESA":498
+    },
+    {
+        "COD_SECAO":"20.498.02",
+        "ONDE LANÇAR":498,
+        "EMPRESA":498
+    },
+    {
+        "COD_SECAO":"20.510.01",
+        "ONDE LANÇAR":510,
+        "EMPRESA":510
+    },
+    {
+        "COD_SECAO":"20.510.02",
+        "ONDE LANÇAR":510,
+        "EMPRESA":510
+    },
+    {
+        "COD_SECAO":"20.537.01",
+        "ONDE LANÇAR":537,
+        "EMPRESA":537
+    },
+    {
+        "COD_SECAO":"20.537.02",
+        "ONDE LANÇAR":537,
+        "EMPRESA":537
+    },
+    {
+        "COD_SECAO":"20.561.02",
+        "ONDE LANÇAR":561,
+        "EMPRESA":561
+    },
+    {
+        "COD_SECAO":"20.605.01",
+        "ONDE LANÇAR":605,
+        "EMPRESA":605
+    },
+    {
+        "COD_SECAO":"20.605.02",
+        "ONDE LANÇAR":605,
+        "EMPRESA":605
+    },
+    {
+        "COD_SECAO":"21.385.01",
+        "ONDE LANÇAR":385,
+        "EMPRESA":385
+    },
+    {
+        "COD_SECAO":"21.420.01",
+        "ONDE LANÇAR":420,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"21.420.02",
+        "ONDE LANÇAR":420,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"21.424.02",
+        "ONDE LANÇAR":424,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"21.492.01",
+        "ONDE LANÇAR":492,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"21.508.01",
+        "ONDE LANÇAR":508,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"21.508.02",
+        "ONDE LANÇAR":508,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"21.554.01",
+        "ONDE LANÇAR":554,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"21.554.02",
+        "ONDE LANÇAR":554,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"21.575.01",
+        "ONDE LANÇAR":575,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"22.337.01",
+        "ONDE LANÇAR":337,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"22.337.02",
+        "ONDE LANÇAR":337,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"22.466.01",
+        "ONDE LANÇAR":466,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"22.466.02",
+        "ONDE LANÇAR":466,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"22.520.01",
+        "ONDE LANÇAR":520,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"22.520.02",
+        "ONDE LANÇAR":520,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"22.523.01",
+        "ONDE LANÇAR":523,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"22.523.02",
+        "ONDE LANÇAR":523,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"22.610.01",
+        "ONDE LANÇAR":610,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"22.610.02",
+        "ONDE LANÇAR":610,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"23.001.02",
+        "ONDE LANÇAR":284,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"23.284.01",
+        "ONDE LANÇAR":284,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"23.284.02",
+        "ONDE LANÇAR":284,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"23.285.01",
+        "ONDE LANÇAR":284,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"23.285.02",
+        "ONDE LANÇAR":284,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"23.286.01",
+        "ONDE LANÇAR":284,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"23.286.02",
+        "ONDE LANÇAR":284,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"23.287.01",
+        "ONDE LANÇAR":284,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"23.287.01",
+        "ONDE LANÇAR":284,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"23.287.02",
+        "ONDE LANÇAR":284,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"23.324.01",
+        "ONDE LANÇAR":324,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"23.324.02",
+        "ONDE LANÇAR":324,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"23.423.01",
+        "ONDE LANÇAR":423,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"23.423.02",
+        "ONDE LANÇAR":423,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"23.424.01",
+        "ONDE LANÇAR":423,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"23.424.02",
+        "ONDE LANÇAR":423,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"23.521.01",
+        "ONDE LANÇAR":521,
+        "EMPRESA":521
+    },
+    {
+        "COD_SECAO":"23.521.02",
+        "ONDE LANÇAR":521,
+        "EMPRESA":521
+    },
+    {
+        "COD_SECAO":"23.564.01",
+        "ONDE LANÇAR":564,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"23.564.02",
+        "ONDE LANÇAR":564,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"23.615.02",
+        "ONDE LANÇAR":615,
+        "EMPRESA":615
+    },
+    {
+        "COD_SECAO":"23.628.01",
+        "ONDE LANÇAR":628,
+        "EMPRESA":628
+    },
+    {
+        "COD_SECAO":"23.628.02",
+        "ONDE LANÇAR":628,
+        "EMPRESA":628
+    },
+    {
+        "COD_SECAO":"24.470.02",
+        "ONDE LANÇAR":470,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"24.611.01",
+        "ONDE LANÇAR":611,
+        "EMPRESA":611
+    },
+    {
+        "COD_SECAO":"24.611.02",
+        "ONDE LANÇAR":611,
+        "EMPRESA":611
+    },
+    {
+        "COD_SECAO":"25.606.01",
+        "ONDE LANÇAR":606,
+        "EMPRESA":606
+    },
+    {
+        "COD_SECAO":"25.606.02",
+        "ONDE LANÇAR":606,
+        "EMPRESA":606
+    },
+    {
+        "COD_SECAO":"25.644.01",
+        "ONDE LANÇAR":644,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"25.644.02",
+        "ONDE LANÇAR":644,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.089.02",
+        "ONDE LANÇAR":336,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"02.637.02",
+        "ONDE LANÇAR":637,
+        "EMPRESA":637
+    },
+    {
+        "COD_SECAO":"03.136.02",
+        "ONDE LANÇAR":227,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"04.496.01",
+        "ONDE LANÇAR":496,
+        "EMPRESA":496
+    },
+    {
+        "COD_SECAO":"04.635.02",
+        "ONDE LANÇAR":635,
+        "EMPRESA":635
+    },
+    {
+        "COD_SECAO":"04.643.01",
+        "ONDE LANÇAR":643,
+        "EMPRESA":643
+    },
+    {
+        "COD_SECAO":"07.376.01",
+        "ONDE LANÇAR":376,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"07.629.01",
+        "ONDE LANÇAR":629,
+        "EMPRESA":629
+    },
+    {
+        "COD_SECAO":"07.648.02",
+        "ONDE LANÇAR":648,
+        "EMPRESA":648
+    },
+    {
+        "COD_SECAO":"07.650.02",
+        "ONDE LANÇAR":650,
+        "EMPRESA":650
+    },
+    {
+        "COD_SECAO":"08.422.01",
+        "ONDE LANÇAR":422,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"08.623.01",
+        "ONDE LANÇAR":623,
+        "EMPRESA":623
+    },
+    {
+        "COD_SECAO":"09.429.01",
+        "ONDE LANÇAR":429,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"09.429.02",
+        "ONDE LANÇAR":429,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"11.535.03",
+        "ONDE LANÇAR":535,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"12.619.02",
+        "ONDE LANÇAR":619,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"16.297.01",
+        "ONDE LANÇAR":297,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"16.499.02",
+        "ONDE LANÇAR":499,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"17.483.01",
+        "ONDE LANÇAR":483,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"17.483.02",
+        "ONDE LANÇAR":483,
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"17.572.01",
+        "ONDE LANÇAR":572,
+        "EMPRESA":572
+    },
+    {
+        "COD_SECAO":"01.001.45",
+        "ONDE LANÇAR":"044",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.083.02",
+        "ONDE LANÇAR":"336",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.182.02",
+        "ONDE LANÇAR":"024",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"01.614.02",
+        "ONDE LANÇAR":"614",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"04.340.02",
+        "ONDE LANÇAR":"339",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"04.643.02",
+        "ONDE LANÇAR":"643",
+        "EMPRESA":643
+    },
+    {
+        "COD_SECAO":"04.651.02",
+        "ONDE LANÇAR":"651",
+        "EMPRESA":651
+    },
+    {
+        "COD_SECAO":"04.661.02",
+        "ONDE LANÇAR":"661",
+        "EMPRESA":661
+    },
+    {
+        "COD_SECAO":"06.641.01",
+        "ONDE LANÇAR":"641",
+        "EMPRESA":641
+    },
+    {
+        "COD_SECAO":"06.641.02",
+        "ONDE LANÇAR":"641",
+        "EMPRESA":641
+    },
+    {
+        "COD_SECAO":"06.642.01",
+        "ONDE LANÇAR":"642",
+        "EMPRESA":642
+    },
+    {
+        "COD_SECAO":"06.642.02",
+        "ONDE LANÇAR":"642",
+        "EMPRESA":642
+    },
+    {
+        "COD_SECAO":"08.233.02",
+        "ONDE LANÇAR":"233",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"08.318.02",
+        "ONDE LANÇAR":"318",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"08.560.01",
+        "ONDE LANÇAR":"560",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"08.617.02",
+        "ONDE LANÇAR":"617",
+        "EMPRESA":617
+    },
+    {
+        "COD_SECAO":"09.253.02",
+        "ONDE LANÇAR":"253",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"09.272.02",
+        "ONDE LANÇAR":"272",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"09.462.02",
+        "ONDE LANÇAR":"462",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"09.646.01",
+        "ONDE LANÇAR":"646",
+        "EMPRESA":646
+    },
+    {
+        "COD_SECAO":"09.646.02",
+        "ONDE LANÇAR":"646",
+        "EMPRESA":646
+    },
+    {
+        "COD_SECAO":"11.155.02",
+        "ONDE LANÇAR":"155",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"11.155.04",
+        "ONDE LANÇAR":"155",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"11.156.02",
+        "ONDE LANÇAR":"156",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"11.536.01",
+        "ONDE LANÇAR":"535",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"12.654.02",
+        "ONDE LANÇAR":"654",
+        "EMPRESA":654
+    },
+    {
+        "COD_SECAO":"14.209.01",
+        "ONDE LANÇAR":"209",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"14.209.02",
+        "ONDE LANÇAR":"209",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"14.608.02",
+        "ONDE LANÇAR":"608",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"16.309.02",
+        "ONDE LANÇAR":"309",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"16.658.02",
+        "ONDE LANÇAR":"658",
+        "EMPRESA":658
+    },
+    {
+        "COD_SECAO":"16.671.02",
+        "ONDE LANÇAR":"671",
+        "EMPRESA":671
+    },
+    {
+        "COD_SECAO":"17.303.02",
+        "ONDE LANÇAR":"303",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"17.308.02",
+        "ONDE LANÇAR":"308",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"17.361.02",
+        "ONDE LANÇAR":"361",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"20.286.02",
+        "ONDE LANÇAR":"286",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"20.311.02",
+        "ONDE LANÇAR":"311",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"20.313.02",
+        "ONDE LANÇAR":"313",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"20.314.02",
+        "ONDE LANÇAR":"314",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"20.333.02",
+        "ONDE LANÇAR":"333",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"20.363.02",
+        "ONDE LANÇAR":"363",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"20.410.02",
+        "ONDE LANÇAR":"410",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"21.575.02",
+        "ONDE LANÇAR":"575",
+        "EMPRESA":1
+    },
+    {
+        "COD_SECAO":"22.280.02",
+        "ONDE LANÇAR":"280",
+        "EMPRESA":1
+    }
+    
+]

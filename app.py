@@ -152,7 +152,7 @@
 #                         text = page.extract_text() or ""
 #                         secao, _ = extract_section_data(text)
                         
-#                         if secao and secao not in mapping_dict and secao not in missing:
+#                         if secao and secao not in mapping_dict and secao not in missing:-----
 #                             missing.append(secao)
 
 #             if missing:
@@ -212,7 +212,6 @@
 
 # if __name__ == "__main__":
 #     main()
-
 import streamlit as st
 import pdfplumber
 from PyPDF2 import PdfReader, PdfWriter
@@ -337,7 +336,7 @@ def cadastrar_secao(secao):
     if st.button("Salvar no JSON"):
         if obra_input:
             save_to_json(secao, obra_input, empresa_input)
-            st.success("Dados salvos localmente com sucesso!")
+            st.success("Dados salvos com sucesso!")
             st.rerun()
         else:
             st.error("Preencha a obra!")
@@ -349,10 +348,6 @@ def main():
     st.title("📑 Divisor de PDF")
 
     mapping_dict = get_json_mapping()
-    
-    # --- CAMINHO DE REDE DEFINIDO AQUI ---
-    # O "r" antes da string é essencial para o Python não confundir as barras invertidas
-    caminho_rede = r"\\192.168.1.168\Anexos\Documentos Digitalizados\Nova pasta (39)"
 
     st.sidebar.header("Tipo de Lançamento")
     tipo_lancamento = st.sidebar.radio("Selecione o tipo:", ["Salários", "Adiantamento"])
@@ -383,7 +378,6 @@ def main():
 
             zip_buffer = io.BytesIO()
             processed_count = 0
-            erros_rede = 0
             filenames_in_zip = set()
 
             with zipfile.ZipFile(zip_buffer, "a", zipfile.ZIP_DEFLATED, False) as zip_file:
@@ -422,37 +416,20 @@ def main():
                                     writer.write(pdf_out)
                                     pdf_bytes = pdf_out.getvalue()
                                     
-                                    # 1. Salva no ZIP para o botão de download
+                                    # Salva no ZIP para o botão de download
                                     zip_file.writestr(nome, pdf_bytes)
-                                    
-                                    # 2. Tenta salvar o PDF individual direto na pasta de rede
-                                    try:
-                                        if not os.path.exists(caminho_rede):
-                                            os.makedirs(caminho_rede, exist_ok=True)
-                                            
-                                        caminho_arquivo_rede = os.path.join(caminho_rede, nome)
-                                        with open(caminho_arquivo_rede, 'wb') as f_rede:
-                                            f_rede.write(pdf_bytes)
-                                    except Exception as e:
-                                        erros_rede += 1
-                                        # Printa o erro silenciosamente no terminal pra não poluir tanto o app
-                                        print(f"Erro ao salvar na rede: {e}")
-                                        
                                     processed_count += 1
                                 
                                 paginas_acumuladas = []
-                            
+                        
                         if paginas_acumuladas:
                             st.warning(f"As últimas {len(paginas_acumuladas)} páginas do arquivo {uploaded_pdf.name} não continham um 'TOTAL SEÇÃO' e foram ignoradas.")
 
             if processed_count > 0:
-                if erros_rede == 0:
-                    st.success(f"Finalizado! {processed_count} arquivos gerados e salvos automaticamente na pasta de rede.")
-                else:
-                    st.warning(f"Processamento concluído. O ZIP foi gerado, mas houve erro ao salvar {erros_rede} arquivo(s) na pasta de rede. Verifique se a pasta está acessível.")
+                st.success(f"Finalizado! {processed_count} arquivos gerados e agrupados com sucesso.")
                 
                 st.download_button(
-                    label="📥 Baixar ZIP (Backup)",
+                    label="📥 Baixar ZIP com todos os PDFs",
                     data=zip_buffer.getvalue(),
                     file_name=f"folhas_agrupadas_{sufixo}.zip",
                     mime="application/zip"
